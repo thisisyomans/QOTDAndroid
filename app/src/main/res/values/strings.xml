@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">QOTD</string>
+    <string name="topappname">topappname</string>
+    <string name="quotetext">TextView</string>
+    <string name="infotext">TextView</string>
+    <string name="bottomtagline">bottomtagline</string>
+    <string name="changebutton">Button</string>
+</resources>
