@@ -1,22 +1,19 @@
 package src.com.manastaneja.qotd;
 
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-//import android.widget.Button;
 import android.widget.Button;
 import android.widget.TextView;
 
-//import com.opencsv.CSVReader;
+//import com.opencsv.CSVReader;//NOTE: need mavin repo for this in dependencies
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     private List<String> lines2;
     private BufferedReader reader1;
     private BufferedReader reader2;
-    private int currentCSVLine;
     private TextView quoteText;
     private TextView infoText;
     private String empty;
@@ -37,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private InputStream inputStream1;
     private InputStream inputStream2;
     private String infoStarter;
+    private SharedPreferences mPrefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         infoFile = "qotdinfo.txt";
         lines1 = new ArrayList<>();
         lines2 = new ArrayList<>();
-        currentCSVLine = 0;
         quoteText = (TextView) findViewById(R.id.quoteTextView);
         infoText = (TextView) findViewById(R.id.infoTextView);
         Button button = (Button) findViewById(R.id.changeButton);
@@ -57,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
         infoStarter = "- ";
 
         button.setText(textForButton);
-        //quoteText.setText(lines1.get(currentCSVLine));
-        //infoText.setText(lines2.get(currentCSVLine));
         quoteText.setText(empty);
         infoText.setText(empty);
 
@@ -89,38 +83,49 @@ public class MainActivity extends AppCompatActivity {
         setFile();
         String line1;
         String line2;
-        //while ((line1 = reader1.hasNext()) != null || (line2 = reader2.readLine()) != null){
+
         while (((line1 = reader1.readLine()) != null) && ((line2 = reader2.readLine()) != null)){
             lines1.add(line1);
+
             if (line2.equals("0")){
                 lines2.add(empty);
             } else {
                 lines2.add(line2);
             }
         }
-        //reader1.close();
-        //reader2.close();
     }
 
     public void setQuoteAndInfo(View v) {
+        int currentCSVLine;
+
+        mPrefs = getSharedPreferences("csvValue", 0);
+        SharedPreferences.Editor editor = mPrefs.edit();
+        currentCSVLine = mPrefs.getInt("csvLine", 0);
+
         quoteText.setText(lines1.get(currentCSVLine));
-        if (lines2.get(currentCSVLine).equals("")) {
+
+        if (lines2.get(currentCSVLine).equals(empty)) {
             infoText.setText(empty);
         } else {
             infoText.setText(infoStarter);
             infoText.append(lines2.get(currentCSVLine));
         }
+
         if (currentCSVLine == 6){
             currentCSVLine = 0;
         } else {
             currentCSVLine++;
         }
+
+        editor.putInt("csvLine", currentCSVLine);
+        editor.apply();
     }
 }
 
-//TODO: UX/UI final touches
-//TODO: optimixation
+//TODO: UX/UI final touches (button!!!)
+//TODO: optimization
 //TODO: app icon
+//TODO: state saving (basically works, just need to do some final checks)
 
 /**
  * Either methods in main activity or separate class instantiated in main activity
