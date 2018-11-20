@@ -118,6 +118,10 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
+//TODO: UX/UI final touches
+//TODO: optimixation
+//TODO: app icon
+
 /**
  * Either methods in main activity or separate class instantiated in main activity
  * separate classes would be for (as of rn): quote changing
