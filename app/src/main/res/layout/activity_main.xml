@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/appNameTopImage"
-        android:layout_width="256dp"
-        android:layout_height="wrap_content"
+        android:layout_width="263dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -28,8 +28,8 @@
 
     <TextView
         android:id="@+id/quoteTextView"
-        android:layout_width="305dp"
-        android:layout_height="189dp"
+        android:layout_width="320dp"
+        android:layout_height="251dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -42,7 +42,8 @@
         android:shadowDy="8"
         android:text="@string/quotetext"
         android:textColor="@android:color/black"
-        android:textSize="26sp"
+        android:textIsSelectable="true"
+        android:textSize="29sp"
         app:fontFamily="@font/amiri_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,8 +54,8 @@
 
     <TextView
         android:id="@+id/infoTextView"
-        android:layout_width="305dp"
-        android:layout_height="126dp"
+        android:layout_width="320dp"
+        android:layout_height="78dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -66,6 +67,7 @@
         android:shadowDx="6"
         android:shadowDy="2"
         android:text="@string/infotext"
+        android:textIsSelectable="true"
         android:textSize="20sp"
         app:fontFamily="@font/amiri_bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,7 +75,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.654" />
+        app:layout_constraintVertical_bias="0.684" />
 
     <Button
         android:id="@+id/changeButton"
@@ -96,8 +98,8 @@
 
     <ImageView
         android:id="@+id/taglineImage"
-        android:layout_width="179dp"
-        android:layout_height="41dp"
+        android:layout_width="185dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
