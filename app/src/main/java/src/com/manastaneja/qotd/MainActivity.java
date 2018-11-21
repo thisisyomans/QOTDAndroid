@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             infoText.append(lines2.get(currentCSVLine));
         }
 
-        if (currentCSVLine == 6){
+        if (currentCSVLine == 70){
             currentCSVLine = 0;
         } else {
             currentCSVLine++;
@@ -122,8 +122,7 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 
-//TODO: UX/UI final touches (button!!!)
-//TODO: optimization
+//TODO: optimization (almost done)
 //TODO: app icon
 //TODO: state saving (basically works, just need to do some final checks)
 
