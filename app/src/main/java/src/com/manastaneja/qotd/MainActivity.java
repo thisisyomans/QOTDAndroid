@@ -123,8 +123,9 @@ public class MainActivity extends AppCompatActivity {
 }
 
 //TODO: optimization (almost done)
-//TODO: app icon
+//TODO: app icon edits
 //TODO: state saving (basically works, just need to do some final checks)
+//TODO:  more quotes
 
 /**
  * Either methods in main activity or separate class instantiated in main activity
