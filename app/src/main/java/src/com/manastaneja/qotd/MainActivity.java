@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             infoText.append(lines2.get(currentCSVLine));
         }
 
-        if (currentCSVLine == 135){
+        if (currentCSVLine == 155){
             currentCSVLine = 0;
         } else {
             currentCSVLine++;
