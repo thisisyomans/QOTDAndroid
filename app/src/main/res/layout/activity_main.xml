@@ -100,8 +100,8 @@
 
     <ImageView
         android:id="@+id/taglineImage"
-        android:layout_width="212dp"
-        android:layout_height="57dp"
+        android:layout_width="197dp"
+        android:layout_height="37dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="4dp"
@@ -110,6 +110,7 @@
         android:contentDescription="@string/bottomtagline"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
